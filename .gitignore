@@ -1,0 +1,16 @@
+# Raw data: download from UCI (see README)
+data/raw/
+# Rebuilt by run_sql.py
+data/retail.db
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Local tooling / personal notes
+.claude/
+PRESENTING_THIS_PROJECT.md

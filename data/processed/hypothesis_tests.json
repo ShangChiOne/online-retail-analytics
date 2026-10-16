@@ -1,0 +1,38 @@
+{
+  "q4_cohort_repeat": {
+    "hypothesis": "Q4-acquired customers repeat less within 90 days",
+    "groups": {
+      "Q4 peak (Sep-Nov)": {
+        "customers": 932,
+        "repeaters": 340,
+        "repeat_rate": 0.3648068669527897,
+        "ci95": [
+          0.33451506764249944,
+          0.3962085932847345
+        ]
+      },
+      "Rest of year (Jan-Aug)": {
+        "customers": 2344,
+        "repeaters": 1002,
+        "repeat_rate": 0.4274744027303754,
+        "ci95": [
+          0.4075814706183488,
+          0.44760467141099414
+        ]
+      }
+    },
+    "difference_pp": -6.266753577758571,
+    "chi2": 10.571550357222922,
+    "p_value": 0.0011484137146586992,
+    "cohens_h": -0.12822950522671617,
+    "significant_at_5pct": true
+  },
+  "acquisition_drop": {
+    "hypothesis": "New-customer acquisition fell Jul-Nov 2011 vs Jul-Nov 2010",
+    "new_customers_2010": 1281,
+    "new_customers_2011": 804,
+    "change_pct": -37.23653395784543,
+    "p_value": 5.920124340112953e-26,
+    "significant_at_5pct": true
+  }
+}

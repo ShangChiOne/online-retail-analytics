@@ -1,0 +1,37 @@
+{
+  "train_cutoff": "2011-09-10",
+  "horizon_days": 90,
+  "training_customers": 5248,
+  "base_active_rate": 0.43521341463414637,
+  "models": {
+    "Logistic regression": {
+      "cv_roc_auc": 0.792628441472805
+    },
+    "Gradient boosting": {
+      "cv_roc_auc": 0.7965557501459428
+    }
+  },
+  "recency_only_auc": 0.762406909770722,
+  "chosen_model": "Logistic regression",
+  "holdout_auc": 0.7961092430082835,
+  "top20pct_captures_churners_pct": 30.89887640449438,
+  "top20pct_precision_pct": 87.3015873015873,
+  "holdout_churn_rate_pct": 56.507936507936506,
+  "logit_coefficients": {
+    "recency_days": -0.523,
+    "avg_days_between_orders": -0.28,
+    "is_uk": -0.006,
+    "revenue": 0.012,
+    "avg_order_value": 0.012,
+    "return_rate": 0.017,
+    "tenure_days": 0.037,
+    "orders_last_90d": 0.045,
+    "orders": 0.068,
+    "revenue_last_90d": 0.249,
+    "distinct_products": 0.414,
+    "orders_last_180d": 0.629
+  },
+  "high_risk_high_value_customers": 36,
+  "high_risk_high_value_revenue_at_risk": 26047.64220504604,
+  "total_revenue_at_risk": 705153.2981541371
+}
