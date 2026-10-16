@@ -6,7 +6,7 @@
 ![SQL](https://img.shields.io/badge/SQL-CTEs%20·%20window%20functions-2a78d6)
 ![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit%20·%20Power%20BI-2a78d6)
 
-🔗 **[Live interactive dashboard](https://YOUR-APP.streamlit.app)** · 📊 [Power BI build guide](powerbi/POWERBI_GUIDE.md) · 🧾 [SQL queries](sql/)
+🔗 **[Live interactive dashboard](https://online-retail-analytics-3bcltmezhp8gz9f9dixeds.streamlit.app)** · 📊 [Power BI build guide](powerbi/POWERBI_GUIDE.md) · 🧾 [SQL queries](sql/)
 
 ---
 

@@ -108,7 +108,7 @@ def delta(key: str, pct: bool = True):
 
 
 c = st.columns(5)
-c[0].metric("Net revenue", f"£{now['net'] / 1e6:.2f}M", delta("net"))
+c[0].metric("Net revenue", f"£{now['net'] / 1e6:.1f}M", delta("net"))
 c[1].metric("Orders", f"{now['orders'] / 1e3:.1f}k", delta("orders"))
 c[2].metric("Customers", f"{now['customers'] / 1e3:.1f}k", delta("customers"))
 c[3].metric("Avg order value", f"£{now['aov']:,.0f}", delta("aov"))
