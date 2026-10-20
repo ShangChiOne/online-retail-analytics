@@ -28,7 +28,7 @@ A UK online gift wholesaler (most customers are small retailers) sold **£18.9M 
 | 3 | **23% of customers ("Champions") generate 70% of revenue.** | RFM segmentation in SQL with `NTILE` | Protect this group with an account-manager or VIP tier. Losing a handful costs more than gaining hundreds of new buyers. |
 | 4 | **349 high-value customers have gone quiet.** They're worth £1.04M lifetime, with a median of 337 days since their last order. | "Can't Lose Them" RFM segment | Personal win-back outreach. *Illustrative:* reactivating 10% at their historical yearly spend ≈ **£52k/year**. |
 | 5 | **A churn model flags at-risk customers far better than guessing.** | ROC-AUC 0.80 on hold-out. In the top 20% risk group, 87% really churn vs a 57% base rate | Use the dashboard's call list each month. 120 valuable, recently active customers are flagged now. |
-| 6 | **22% of products bring in 80% of revenue, and Sep–Nov is 41% of the year.** | Pareto/ABC analysis with SQL window functions | Prioritise stock for the 1,050 A-class SKUs before September. Build bundles from basket pairs with 30×+ lift. |
+| 6 | **22% of products bring in 80% of revenue, and Sep–Nov is 41% of the year.** | Pareto/ABC analysis with SQL window functions | Prioritise stock for the 1,040 A-class SKUs before September. Build bundles from basket pairs with 30×+ lift. |
 
 > Every number above is produced by the code in this repo. Run `python run_pipeline.py` and you get the same results.
 
@@ -98,6 +98,7 @@ Raw data is messy, and handling it properly is half the job. Each rule below is 
 | Bad-debt adjustments (`A` invoices) | 6 | Accounting entries, not sales |
 | Non-product codes (postage, Amazon fees, manual, vouchers) | 5,969 | Would distort product and basket analysis |
 | Zero / negative price | 5,931 | Stock write-offs ("damaged", "given away") |
+| Stock-code case variants (`15056bl` → `15056BL`) | 0 (3,240 merged) | 170 products were split across two codes. Merging them fixes product rankings, and Power BI relationships need it because Power BI ignores case. |
 | **Voided order pairs** (sale + exact cancellation) | 12,360 | e.g. an 80,995-unit order cancelled 12 minutes later. It nets to £0 but would wreck average order size and product rankings. |
 | **Kept:** 1,008,770 rows (94.5%) | | |
 

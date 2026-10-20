@@ -4,6 +4,7 @@ Sheet overlap (1-9 Dec 2010 in both sheets),22523,377488.45,Same invoices appear
 Exact duplicate lines,11812,54228.42,"Identical invoice, product, quantity, time and price"
 Bad-debt adjustments (A-invoices),6,-147614.08,"Accounting entries, not customer transactions"
 "Non-product codes (postage, fees, manual, vouchers)",5969,76866.85,Not merchandise; would distort product and basket analysis
+Stock codes upper-cased (not removed),0,0.0,"3,240 lines used lower-case variants of an existing product code"
 Zero or negative unit price,5931,0.0,"Inventory write-offs and free samples, not sales"
 Negative qty without cancellation invoice,0,0.0,Warehouse stock adjustments
 Voided order pairs (sale + exact cancellation),12360,55618.6,Sale fully reversed by a matching cancellation; nets to zero but distorts volumes

@@ -76,6 +76,15 @@ def main() -> None:
     df = step(df, non_product, "Non-product codes (postage, fees, manual, vouchers)",
               "Not merchandise; would distort product and basket analysis")
 
+    # Standardise stock-code case: '15056bl' and '15056BL' are the same product.
+    # Done after step 4 because the non-product prefixes ('gift_') are lower-case.
+    upper = df["StockCode"].str.upper()
+    changed = int((upper != df["StockCode"]).sum())
+    df["StockCode"] = upper
+    log.append({"rule": "Stock codes upper-cased (not removed)", "rows_removed": 0, "value_removed_gbp": 0.0,
+                "reason": f"{changed:,} lines used lower-case variants of an existing product code"})
+    print(f"  - {'Stock codes upper-cased (merged variants)':<42} {changed:>9,} rows changed")
+
     # 5. Zero / negative prices: stock write-offs ('damaged', 'given away') with no customer.
     df = step(df, df["Price"] <= 0, "Zero or negative unit price",
               "Inventory write-offs and free samples, not sales")
